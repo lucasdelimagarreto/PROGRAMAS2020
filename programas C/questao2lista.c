@@ -21,7 +21,7 @@ int main(void){
     printf("\n");
     printf("O valor do plano de saude e de R$100.00");
     printf("\n");
-    printf("o valor do salario com asreducoes e de R$%f", salario);
+    printf("o valor do salario com as reducoes e de R$%f", salario);
 
     return 0;
 
