@@ -3,15 +3,27 @@
 
 int main (){
 
-    int var;
-    printf("Digite o numero: ");
-    scanf("%d", &var);
+    int numero, quant, var;
 
-    if (var%2 == 1){
-        printf("numero é primo!");
+    printf("Digite o numero:");
+    scanf("%d", &numero);
+
+    for (size_t quant = 1; quant <= numero * 5; quant++){
+
+        if ((numero%quant) == 0)
+        {
+            var++;
+        }
+        
     }
-    else{
-        printf("O número não é primo!");
+    if (var > 2)
+    {
+        printf("Não e primo!");
+    }
+    else
+    {
+        printf("E primo!");
     }
     return 0;
+    
 }
