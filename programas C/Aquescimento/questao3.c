@@ -3,23 +3,27 @@
 
 int main (){
 
-    int quant, cont, i;
+    int quant, cont, numero, i;
     int var = 0;
 
     printf("Digite a quantidade de numeros primos!");
     scanf("%d", &quant);
 
-    for (size_t i = 2; i < quant + 1; i++){
-        
-        var = var + 1;
+    for (size_t numero = 1; numero < quant; numero++){
 
-        if(var % i == 0){
-            
-            printf("\n%d", var);
-
+        for (size_t cont = 1; cont <= quant * 5; cont++)
+        {
+            if (cont % numero == 0)
+            {
+                var++;
+            } 
         }
-
+        if (var <= 2)
+        {
+            printf("%d", cont);
+        }
+        
     }
-    
+
     return 0;
 }
