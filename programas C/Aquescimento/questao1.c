@@ -8,7 +8,7 @@ int main (){
     printf("Digite o numero:");
     scanf("%d", &numero);
 
-    for (size_t quant = 1; quant <= numero * 5; quant++){
+    for (quant = 1; quant <= numero * 5; quant++){
         
         if (numero % quant == 0){
             

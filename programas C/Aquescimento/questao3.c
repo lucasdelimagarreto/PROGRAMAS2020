@@ -3,27 +3,30 @@
 
 int main (){
 
-    int quant, cont, numero, i;
-    int var = 0;
+    int repet, val1, val2, var, cont;
 
-    printf("Digite a quantidade de numeros primos!");
-    scanf("%d", &quant);
+    printf("Digite a quantidade de números que deseja: ");
+    scanf("%d", &repet);
 
-    for (size_t numero = 1; numero < quant; numero++){
+    for (val1 = 1; val1 <= repet; val1++){
 
-        for (size_t cont = 1; cont <= quant * 5; cont++)
-        {
-            if (cont % numero == 0)
-            {
-                var++;
-            } 
+        for (val2 = 1; val2 <= repet; val2++){
+
+            if (val1 % val2 == 0){
+
+                cont++;
+            }
+            
         }
-        if (var <= 2)
-        {
-            printf("%d", cont);
+        if (cont == 2){
+
+            printf("%d", val1);
         }
         
+        cont = 0;
+        
     }
-
+    
+        
     return 0;
 }
