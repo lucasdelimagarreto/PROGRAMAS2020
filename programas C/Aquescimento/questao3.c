@@ -20,7 +20,7 @@ int main (){
         }
         if (cont == 2){
 
-            printf("%d", val1);
+            printf("%d, ", val1);
         }
         
         cont = 0;
