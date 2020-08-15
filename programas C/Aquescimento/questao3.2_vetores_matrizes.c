@@ -1,89 +1,135 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define TAM 10
 
 int main (){
 
-    int matriz[10][3], i, j, aux, aux2 = 0, cache = 1;
+    int matriz[TAM][3], aux = 0, aux2 = 0, aux3 = 0, linhaes = 0, linhadi = 0, linhameio = 0, coluna = 0;
 
-    for (i = 0; i < 10; i++){
+    for (int i = 0; i < TAM; i++){
 
-        for (j = 0; j < 3; j++){
+        for (int j = 0; j < 3; j++){
 
             matriz[i][j] = 0;
+            
+        }
+    }
+    
+    while (aux != -1){
 
+        printf("Digite o valor: ");
+        scanf("%d", &aux);
+
+        if (aux == -1){
+
+            break;
         }
         
-    }
+        if (aux % 2 == 1){
 
-    for (i = 0; i < 10; i++){
+            //impares
+            
+            if (linhaes > TAM - 1){
 
-        for (j = 0; j < 3; j++){
+                if (linhameio > TAM -1){
 
-            printf("Digite um numero inteiro para a matriz: ");
-            scanf("%d", &aux);
+                    for (int i = 0; i < TAM; i++){
 
-            if (aux % 2 == 0){
-
-                matriz[i][2] = aux;
-
-                if (i == 9){
-
-                    matriz[aux2][1] = matriz[0][2];
-
-                    for (i = 0; i < 10; i++){
-
-                        matriz[cache - 1][2] = matriz[cache][2];
+                        aux3 = matriz[i][1];
+                        matriz[i][1] = matriz[i + 1][1];
+                        matriz[i + 1][1] = aux3;
                         
                     }
 
-                    aux2++;
+                    matriz[TAM -1][1] = aux;
                     
 
                 }
-                
+
+                else{
+
+                    for (int i = 0; i < TAM - 1; i++){
+
+                        aux3 = matriz[i][0];
+                        matriz[i][0] = matriz[i + 1][0];
+                        matriz[i + 1][0] = aux3;
+                        
+                    
+                    }
+
+                    matriz[linhameio][1] = matriz[TAM - 1][0];
+                    matriz[TAM - 1][0] = aux;
+                    linhameio++;
+  
+                }
 
             }
-            
-            else if (aux % 2 == 1){
 
-                matriz[i][0] = aux;
+            else{
 
-                if (i == 9){
+                matriz[linhaes][0] = aux;
+                linhaes++;
 
-                    matriz[aux2 + 1][1] = matriz[0][0];
+            }
+        }
 
-                    for (i = 0; i < 10; i++){
+        else{
 
-                        matriz[cache - 1][0] = matriz[cache][0];
+            //pares
+
+            if (linhadi > TAM - 1){
+
+                if (linhameio > TAM -1){
+
+                    for (int i = 0; i < TAM; i++){
+
+                        aux3 = matriz[i][1];
+                        matriz[i][1] = matriz[i + 1][1];
+                        matriz[i + 1][1] = aux3;
                         
                     }
 
-                    aux2++;
-
+                    matriz[TAM -1][1] = aux;
+                    
                 }
-                
-            
-            }
-            
 
+                else{
+
+                    for (int i = 0; i < TAM - 1; i++){
+
+                        aux3 = matriz[i][2];
+                        matriz[i][2] = matriz[i + 1][2];
+                        matriz[i + 1][2] = aux3;
+  
+                    }
+
+                    matriz[linhameio][1] = matriz[TAM - 1][2];
+                    matriz[TAM - 1][2] = aux;
+                    linhameio++;
+  
+                }
+
+            }
+
+            else{
+
+                matriz[linhadi][2] = aux;
+                linhadi++;
+
+            }
         }
-        
     }
 
     system("cls");
 
-    for (int i = 0; i < 10; i++){
-
-        for (int j = 0; j < 3; j++){
-
+    for (int i = 0; i < TAM; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
             printf("%d\t", matriz[i][j]);
-
         }
-
         printf("\n");
-        
     }
-
 
     return 0;
 }
