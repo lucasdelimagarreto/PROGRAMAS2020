@@ -3,13 +3,12 @@
 
 int main (){
 
-    int matriz[10][3], aux = 0, aux2 = 1, aux3 = 0, linha1 = 0, linha2 = 0, linha3 = 0, contE = 0, contD = 0;
+    int matriz[10][3], aux = 0, aux2 = 0, aux3 = 0, linha1 = 0, linha2 = 0, linha3 = 0, contE = 0, contD = 0;
 
+    for (int i = 0; i < 10; i++){
 
-    for (int i = 0; i < 10; i++)
-    {
-        for (int j = 0; j < 3; j++)
-        {
+        for (int j = 0; j < 3; j++){
+
             matriz[i][j] = 0;
         }
         
@@ -24,36 +23,14 @@ int main (){
 
         if (contE == 9 || contD == 9){
 
-            if (contE == 9){
+            matriz[aux2][1] = matriz[linha2][0];
+            linha2++;
 
-                matriz[linha2][1] = matriz[linha2][0];
-                linha2++;
-                
-                while (aux2 != 8){
+            matriz[aux2][1] = matriz[linha2][2];
+            linha2++;
 
-                    matriz[aux2 - 1][0] = matriz[aux2][0];
-                    aux2++;
+            aux2++;
 
-
-                }
-
-            }
-            
-            aux2 = 1;
-            
-            if (contD == 9){
-
-                matriz[linha2][1] = matriz[linha2][2];
-                linha2++;
-                
-                while (aux2 != 8){
-
-                    matriz[aux2 - 1][2] = matriz[aux2][2];
-                    aux2++;
-                    
-                }
-        
-            }
 
         }
 
