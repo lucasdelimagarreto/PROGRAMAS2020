@@ -4,22 +4,18 @@
 
 void main (){
 
-    int linha, coluna, aux = 0, aux2, matriz[AUX][AUX];
+    int linha, coluna, aux2 = 1, matriz[AUX][AUX];
+
+    char aux = '*';
     
     for (int i = 0; i < AUX; i++){
 
         for (int j = 0; j < AUX; j++){
 
-            if (coluna){
+            printf("\n%c", aux * aux2);
 
-                
+            aux2++;
             
-            }
-            
-        
         }
     }
-    
-
-
 }
